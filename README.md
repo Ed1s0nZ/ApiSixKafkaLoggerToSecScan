@@ -13,7 +13,7 @@
 | **学习曲线**            | 工具（如 APISIX、Xray/Burp）需要一定的配置和学习成本，但长期使用后维护较简单。                | 人工测试需要较高的安全专业技能，学习成本高，且需要持续更新知识。                                     |
 | **定制化能力**          | 工具支持自定义规则，但灵活性有限，难以完全适配某些复杂业务场景。                          | 人工测试可以完全定制，适配复杂业务逻辑和动态交互场景。                                           |
 ## 用法
-Apisix-kafkalogger插件配置
+1、Apisix-kafkalogger插件配置，配置方法可参考[这里](https://blog.csdn.net/weixin_45945976/article/details/139123020?spm=1001.2014.3001.5501)，*记得修改如下配置文件中的kafka地址和topic；
 ```
 {
   "_meta": {
@@ -46,3 +46,6 @@ Apisix-kafkalogger插件配置
 }
 
 ```
+2、修改`main.go`中`Brokers`值为kafka地址（即与kafkalogger插件中的kafka地址保持一致），修改`topic`的值为kafka的topic；
+3、修改`secscan.go`中的`proxyURL, _ := url.Parse("http://127.0.0.1:3234")`里的下级代理地址为你的安全扫描器地址（如Xray或Burp的代理地址）；
+4、编译并部署扫描（可在`tools.go`文件中的`isWithinWorkingHours`中配置扫描的时间，如只在`00:00 - 09:00` 进行扫描）；
