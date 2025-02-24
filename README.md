@@ -23,7 +23,7 @@
 | **低成本长期监控**            | ✅ 工具部署后维护成本低。                 | ❌ 人工测试成本较高，不适合长期监控。  |
 
 ## 用法
-1、Apisix-kafkalogger插件配置，配置方法可参考[这里](https://blog.csdn.net/weixin_45945976/article/details/139123020?spm=1001.2014.3001.5501)，*记得修改如下配置文件中的kafka地址和topic；
+1. Apisix-kafkalogger插件配置，配置方法可参考[这里](https://blog.csdn.net/weixin_45945976/article/details/139123020?spm=1001.2014.3001.5501)，*记得修改如下配置文件中的kafka地址和topic；
 ```
 {
   "_meta": {
@@ -56,6 +56,6 @@
 }
 
 ```
-2、修改`main.go`中`Brokers`值为kafka地址（即与kafkalogger插件中的kafka地址保持一致），修改`topic`的值为kafka的topic；
-3、修改`secscan.go`中的`proxyURL, _ := url.Parse("http://127.0.0.1:3234")`里的下级代理地址为你的安全扫描器地址（如Xray或Burp的代理地址）；
-4、编译并部署扫描（可在`tools.go`文件中的`isWithinWorkingHours`中配置扫描的时间，如只在`00:00 - 09:00` 进行扫描）；
+2. 修改`main.go`中`Brokers`值为kafka地址（即与kafkalogger插件中的kafka地址保持一致），修改`topic`的值为kafka的topic；
+3. 修改`secscan.go`中的`proxyURL, _ := url.Parse("http://127.0.0.1:3234")`里的下级代理地址为你的安全扫描器地址（如Xray或Burp的代理地址）；
+4. 编译并部署扫描（可在`tools.go`文件中的`isWithinWorkingHours`中配置扫描的时间，如只在`00:00 - 09:00` 进行扫描）.
