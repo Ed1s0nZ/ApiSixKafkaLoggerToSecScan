@@ -1,4 +1,5 @@
 # ApiSixKafkaLoggerToSecScan
+通过Apisix_kafkalogger 插件收集流量进行安全扫描（如配置下级代理到xray、Burp）的工具。
 ## 用法
 Apisix-kafkalogger插件配置
 ```
