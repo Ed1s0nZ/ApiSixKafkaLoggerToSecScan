@@ -1,6 +1,6 @@
 # ApiSixKafkaLoggerToSecScan
 通过Apisix_kafkalogger 插件收集流量进行安全扫描（如配置下级代理到 Xray、Burp Suite），实现实时流量监控和漏洞扫描。   
-*流程图：流量 -> APISix -> KafkaLogger 插件 -> Kafka -> ApiSixKafkaLoggerToSecScan -> 安全扫描工具*
+**流程图：流量 -> APISix -> KafkaLogger 插件 -> Kafka -> ApiSixKafkaLoggerToSecScan -> 安全扫描工具**
 
 | **步骤** | **组件**          | **描述**                                                                 |
 |----------|-------------------|--------------------------------------------------------------------------|
