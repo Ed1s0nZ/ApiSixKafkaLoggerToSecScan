@@ -6,8 +6,8 @@
 |----------|-------------------|--------------------------------------------------------------------------|
 | 1        | 流量              | 外部请求或数据流进入系统。                                               |
 | 2        | APISix            | 流量进入API网关，进行初步处理和转发。                                    |
-| 3        | KafkaLogger 插件  | APISix通过KafkaLogger插件将日志或数据发送到Kafka。                       |
-| 4        | Kafka             | Kafka作为消息中间件，接收并存储来自APISix的日志或数据。                  |
+| 3        | KafkaLogger 插件  | APISix通过KafkaLogger插件将数据发送到Kafka。                       |
+| 4        | Kafka             | Kafka作为消息中间件，接收并存储来自APISix的数据。                  |
 | 5        | ApiSixKafkaLoggerToSecScan             | ApiSixKafkaLoggerToSecScan读取kafka的数据解析成http/https流量，并将流量下级代理到安全扫描工具。                  |
 | 6        | 安全扫描工具      | 从Kafka读取数据，并进行安全扫描分析。                                    |
 ## 适用场景
